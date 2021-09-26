@@ -21,8 +21,8 @@ void Karen::complain(std::string level) {
     int cmd;
     this->mode[0] = &Karen::debug;
     this->mode[1] = &Karen::info;
-    this->mode[0] = &Karen::warning;
-    this->mode[0] = &Karen::error;
+    this->mode[2] = &Karen::warning;
+    this->mode[3] = &Karen::error;
 
     cmd = ((level == "DEBUG") * 1 ) + ((level == "INFO") * 2 ) + ((level == "WARNING") * 3 ) + ((level == "ERROR") * 4 );
     if (cmd == 0)
