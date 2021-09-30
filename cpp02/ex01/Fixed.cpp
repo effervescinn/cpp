@@ -8,7 +8,7 @@ Fixed::Fixed(void)
 Fixed::Fixed(int const num)
 {
     std::cout << "Int constructor called" << std::endl;
-    this->rawBits = 10 << this->fractionalBits;
+    this->rawBits = num << this->fractionalBits;
 }
 
 Fixed::Fixed(float const num)
