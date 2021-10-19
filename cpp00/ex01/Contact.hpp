@@ -1,4 +1,5 @@
-// #include "Phonebook.hpp"
+#ifndef CONTACT_H
+# define CONTACT_H
 
 class Contact
 {
@@ -23,3 +24,5 @@ private:
     std::string phone_number;
     std::string darkest_secret;
 };
+
+#endif
