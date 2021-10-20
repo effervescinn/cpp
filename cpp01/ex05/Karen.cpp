@@ -26,7 +26,7 @@ void Karen::complain(std::string level) {
 
     cmd = ((level == "DEBUG") * 1 ) + ((level == "INFO") * 2 ) + ((level == "WARNING") * 3 ) + ((level == "ERROR") * 4 );
     if (cmd == 0)
-        std::cout << "I cannot believe you entered this, try again, I'm broken" << std::endl;
+        std::cout << "I cannot believe you entered this, try again, I'm broken." << std::endl;
     else {
         (this->*mode[cmd - 1])();
     }

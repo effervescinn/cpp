@@ -1,4 +1,7 @@
-#include <iostream>
+#ifndef ZOMBIE_H
+# define ZOMBIE_H
+
+# include <iostream>
 
 class Zombie {
     private:
@@ -13,3 +16,5 @@ class Zombie {
 
 Zombie* newZombie( std::string name );
 void randomChump( std::string name );
+
+#endif

@@ -1,8 +1,10 @@
-#include <iostream>
+#ifndef KAREN_H
+# define KAREN_H
+# include <iostream>
 
 class Karen {
     public:
-
+        
         void complain(std::string level);
 
     private:
@@ -14,3 +16,5 @@ class Karen {
 
         void (Karen::*mode[4])();
 };
+
+#endif

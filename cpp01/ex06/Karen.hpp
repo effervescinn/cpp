@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef KAREN_H
+# define KAREN_H
+# include <iostream>
 
 class Karen {
     public:
@@ -14,3 +16,5 @@ class Karen {
 
         void (Karen::*mode[4])();
 };
+
+#endif

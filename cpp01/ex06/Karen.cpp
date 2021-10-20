@@ -29,10 +29,16 @@ void Karen::complain(std::string level) {
     this->mode[3] = &Karen::error;
 
     cmd = ((level == "DEBUG") * 1 ) + ((level == "INFO") * 2 ) + ((level == "WARNING") * 3 ) + ((level == "ERROR") * 4 );
-    if (cmd == 0)
-        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl<< std::endl;
-    else {
-        for(int i = cmd; i <= 4; i++)
-            (this->*mode[i - 1])(); 
+    switch(cmd)
+    {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+            for(int i = cmd; i <= 4; i++)
+                (this->*mode[i - 1])();
+            break;
+        case 0:
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl<< std::endl; 
     }
-} 
+}
