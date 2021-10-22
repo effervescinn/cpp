@@ -55,6 +55,8 @@ float Fixed::toFloat( void ) const {
 // Math operators
 
 Fixed & Fixed::operator=(Fixed const &rhs) {
+    if (this == &rhs)
+        return *this;
     this->rawBits = rhs.getRawBits();
     return *this;
 }

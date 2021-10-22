@@ -12,7 +12,6 @@ class Fixed {
         static Fixed &max(Fixed &a, Fixed &b);
         static const Fixed &max(Fixed const &a, Fixed const &b);
 
-
         Fixed(void);
         Fixed(int const num);
         Fixed(float const num);

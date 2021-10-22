@@ -1,4 +1,6 @@
-#include <iostream>
+#ifndef FIXED_H
+# define FIXED_H
+# include <iostream>
 
 class Fixed {
     public:
@@ -16,3 +18,5 @@ class Fixed {
         static int const fractionalBits = 8;
         int rawBits;
 };
+
+#endif

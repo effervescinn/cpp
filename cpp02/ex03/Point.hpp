@@ -16,8 +16,8 @@ class Point {
 
     private:
 
-        Fixed x;
-        Fixed y;
+        Fixed const x;
+        Fixed const y;
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
