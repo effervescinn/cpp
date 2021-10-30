@@ -4,7 +4,7 @@ DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 CC = clang++
 NAME = diamondtrap
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 
 all:		$(NAME)
 

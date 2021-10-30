@@ -3,8 +3,8 @@ OFILES = $(patsubst %.cpp,%.o,$(FILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 CC = clang++
-NAME = claptrap
-FLAGS = -Wall -Wextra -Werror
+NAME = scavtrap
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all:		$(NAME)
 

@@ -1,6 +1,6 @@
 #include "FlagTrap.hpp"
 
-FlagTrap::FlagTrap(std::string name):ClapTrap(name)
+FlagTrap::FlagTrap(std::string name): ClapTrap(name)
 {
     std::cout << "FlagTrap constructor called" << std::endl;
     this->hitPoints = 100;
@@ -15,5 +15,5 @@ FlagTrap::~FlagTrap()
 
 void FlagTrap::highFivesGuy()
 {
-    std::cout << "Give me a highfive (^.^)✋" << std::endl;
+    std::cout << this->name << " says: Give me a highfive (^.^)✋" << std::endl;
 }

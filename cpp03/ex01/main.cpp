@@ -2,7 +2,9 @@
 
 int main()
 {
-    ScavTrap test("Den");
+    ScavTrap Dan("Dan");
 
+    Dan.attack("enemy");
+    Dan.guardGate();
     return 0;
 }

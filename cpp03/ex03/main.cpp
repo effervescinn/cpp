@@ -4,8 +4,11 @@
 
 int main()
 {
-    DiamondTrap test("Den");
+    DiamondTrap Yutaka("Hoshino");
 
-    test.whoAmI();
+    Yutaka.whoAmI();
+    Yutaka.attack("Sakuma");
+    Yutaka.guardGate();
+    Yutaka.highFivesGuy();
     return 0;
 }

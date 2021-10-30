@@ -3,8 +3,10 @@
 
 int main()
 {
-    FlagTrap test("Den");
+    FlagTrap Makoto("Tsukimoto");
 
-    test.highFivesGuy();
+    Makoto.attack("Dragon");
+    Makoto.beRepaired(10);
+    Makoto.highFivesGuy();
     return 0;
 }

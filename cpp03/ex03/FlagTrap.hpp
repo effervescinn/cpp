@@ -1,11 +1,11 @@
 #ifndef FLAGTRAP_H
-# define FLAGTRAP_H
-# include "ClapTrap.hpp"
+#define FLAGTRAP_H
+#include "ClapTrap.hpp"
 
-class FlagTrap: virtual public ClapTrap
+class FlagTrap : virtual public ClapTrap
 {
-public:
 
+public:
     FlagTrap(std::string name);
     ~FlagTrap();
     void highFivesGuy();
