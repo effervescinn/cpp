@@ -2,8 +2,10 @@
 
 int main()
 {
-    ClapTrap test("zombie");
+    ClapTrap Piligrim("Scott");
 
-    test.attack("zombie");
+    Piligrim.attack("Gideon");
+    Piligrim.takeDamage(5);
+    Piligrim.beRepaired(10);
     return 0;
 }
