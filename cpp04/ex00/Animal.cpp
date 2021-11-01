@@ -5,6 +5,17 @@ Animal::Animal()
     std::cout << "Animal constructor called" << std::endl;
 }
 
+Animal &Animal::operator=(Animal const &rhs)
+{
+    this->type = rhs.type;
+    return *this;
+}
+
+Animal::Animal(Animal &src)
+{
+    *this = src;
+}
+
 Animal::~Animal()
 {
     std::cout << "Animal destructor called" << std::endl;
@@ -30,6 +41,17 @@ void Animal::setType(std::string type)
 WrongAnimal::WrongAnimal()
 {
     std::cout << "Animal constructor called" << std::endl;
+}
+
+WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
+{
+    this->type = rhs.type;
+    return *this;
+}
+
+WrongAnimal::WrongAnimal(WrongAnimal &src)
+{
+    *this = src;
 }
 
 WrongAnimal::~WrongAnimal()
