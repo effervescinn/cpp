@@ -1,7 +1,8 @@
-// #ifndef IAMATERIASOURCE_H
-// #define IAMATERIASOURCE_H
+#ifndef IAMATERIASOURCE_H
+#define IAMATERIASOURCE_H
 
-// #include <iostream>
+#include <iostream>
+class AMateria;
 
 class IMateriaSource
 {
@@ -11,4 +12,4 @@ public:
     virtual AMateria *createMateria(std::string const &type) = 0;
 };
 
-// #endif
+#endif
