@@ -5,6 +5,11 @@ Animal::Animal()
     std::cout << "Animal constructor called" << std::endl;
 }
 
+Animal::Animal(Animal &src)
+{
+    *this = src;
+}
+
 Animal::~Animal()
 {
     std::cout << "Animal destructor called" << std::endl;
@@ -23,4 +28,10 @@ void Animal::makeSound() const
 void Animal::setType(std::string type)
 {
     this->type = type;
+}
+
+Animal &Animal::operator=(Animal const &rhs)
+{
+    this->type = rhs.type;
+    return *this;
 }

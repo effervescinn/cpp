@@ -36,7 +36,7 @@ void Animal::setType(std::string type)
     this->type = type;
 }
 
-
+/********************************************************************/
 
 WrongAnimal::WrongAnimal()
 {
