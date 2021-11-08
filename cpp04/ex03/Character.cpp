@@ -7,6 +7,22 @@ Character::Character(std::string name)
         this->items[i] = NULL;
 }
 
+Character &Character::operator=(Character const &rhs)
+{
+    this->name = rhs.name;
+    for (int i = 0; i< 4; i++)
+    {
+        delete this->items[i];
+        this->items[i] = rhs.items[i];
+    }
+    return *this;
+}
+
+Character::Character(Character const &src)
+{
+    *this = src;
+}
+
 Character::~Character()
 {
     for (int i = 0; this->items[i]; i++)

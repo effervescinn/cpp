@@ -10,10 +10,12 @@ class MateriaSource : virtual public IMateriaSource
 private:
     AMateria *materias[4];
 public:
-    // MateriaSource();
-    // virtual ~MateriaSource() {};
-    // virtual void learnMateria(AMateria *);
-    // virtual AMateria *createMateria(std::string const &type);
+    MateriaSource();
+    MateriaSource(MateriaSource const &src);
+    virtual ~MateriaSource();
+    virtual void learnMateria(AMateria *);
+    virtual AMateria *createMateria(std::string const &type);
+    MateriaSource &operator=(MateriaSource const &rhs);
 };
 
 #endif

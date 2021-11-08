@@ -4,7 +4,7 @@ DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 CC = clang++
 NAME = amateria
-FLAGS = -Wall -Wextra  -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all:		$(NAME)
 
