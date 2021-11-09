@@ -5,9 +5,9 @@
 
 class Brain {
 public:
-    Brain();
+    Brain() {};
     Brain(Brain &src);
-    ~Brain();
+    ~Brain() {};
     std::string ideas[100];
     Brain &operator=(Brain const &rhs);
 };
