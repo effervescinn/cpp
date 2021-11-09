@@ -2,7 +2,6 @@
 
 AMateria::AMateria(std::string const & type)
 {
-    std::cout << "AMateria constructor called" << std::endl;
     this->type = type;
 }
 

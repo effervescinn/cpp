@@ -1,9 +1,9 @@
-FILES = main.cpp AMateria.cpp ICharacter.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
+FILES = main.cpp AMateria.cpp Character.cpp Ice.cpp Cure.cpp MateriaSource.cpp
 OFILES = $(patsubst %.cpp,%.o,$(FILES))
 DEPS = $(patsubst %.o,%.d,$(OFILES))
 DEPFLAGS = -MMD -MF $(@:.o=.d)
 CC = clang++
-NAME = amateria
+NAME = interfaces
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all:		$(NAME)
