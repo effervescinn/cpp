@@ -1,3 +1,6 @@
+#ifndef BUREAUCRAT_H
+#define BUREAUCRAT_H
+
 #include <iostream>
 #include <exception>
 
@@ -11,8 +14,8 @@ public:
 	Bureaucrat(Bureaucrat const &src);
 	~Bureaucrat(){};
 	Bureaucrat &operator=(Bureaucrat const &rhs);
-	int getGrade();
-	std::string getName();
+	int getGrade() const;
+	const std::string getName() const;
 	void incrementGrade();
 	void decrementGrade();
 
@@ -28,3 +31,7 @@ public:
 		virtual const char *what() const throw();
 	};
 };
+
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs);
+
+#endif
