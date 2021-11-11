@@ -1,9 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : name("Empty"), signGrade(150) , executeGrade(150)
-{
-
-}
+Form::Form() : name("Form"), signGrade(150) , executeGrade(150) {}
 
 Form::Form(std::string name, int signGrade, int executeGrade) : name(name), signGrade(signGrade) , executeGrade(executeGrade)
 {
@@ -12,6 +9,11 @@ Form::Form(std::string name, int signGrade, int executeGrade) : name(name), sign
 		throw GradeTooHighException();
 	if (signGrade > 150 || executeGrade > 150)
 		throw GradeTooLowException();
+}
+
+Form::Form(Form const &src) : name(src.getName()), signature(src.getSignature()), signGrade(src.getSignGrade()) , executeGrade(src.getExecuteGrade())
+{
+
 }
 
 const std::string Form::getName() const

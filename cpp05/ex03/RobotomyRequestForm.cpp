@@ -4,6 +4,11 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 {
 }
 
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src)
+{
+	*this = src;
+}
+
 void RobotomyRequestForm::execute(Bureaucrat const &executor)
 {
 	if (executor.getGrade() > this->getExecuteGrade())
@@ -16,4 +21,10 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor)
 		std::cout << "Drrrrzzzz brrrrrr ghrrrrrr" << std::endl;
 		std::cout << this->target << " has been robotomized successfully 50% of the time" << std::endl;
 	}
+}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+	this->target = rhs.target;
+	return *this;
 }

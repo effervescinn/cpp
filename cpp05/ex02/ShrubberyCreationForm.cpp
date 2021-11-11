@@ -4,6 +4,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbe
 {
 }
 
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src)
+{
+	*this = src;
+}
+
 void ShrubberyCreationForm::execute(Bureaucrat const &executor)
 {
 	if (executor.getGrade() > this->getExecuteGrade())
@@ -37,4 +42,10 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor)
 			file << "\n";
 		}
 	}
+}
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
+{
+	this->target = rhs.target;
+	return *this;
 }

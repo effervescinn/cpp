@@ -15,11 +15,13 @@ class Intern
 
 public:
 	Intern();
-	~Intern() {};
+	Intern(Intern const &src);
+	~Intern(){};
 	Form *createShrubbery(std::string target);
 	Form *createRobotomy(std::string target);
 	Form *createPresidental(std::string target);
 	Form *makeForm(std::string name, std::string target);
+	Intern &operator=(const Intern &rhs);
 };
 
 #endif

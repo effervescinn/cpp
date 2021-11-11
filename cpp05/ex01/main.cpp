@@ -3,7 +3,6 @@
 
 int main()
 {
-
 	try
 	{
 		Bureaucrat Kolya("Kolya", 12);

@@ -4,6 +4,11 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("Presi
 {
 }
 
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src)
+{
+	*this = src;
+}
+
 void PresidentialPardonForm::execute(Bureaucrat const &executor)
 {
 	if (executor.getGrade() > this->getExecuteGrade())
@@ -15,4 +20,10 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor)
 		std::cout << "Form " << this->getName() << " is executed by " << executor.getName() << std::endl;
 		std::cout << this->target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 	}
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
+{
+	this->target = rhs.target;
+	return *this;
 }

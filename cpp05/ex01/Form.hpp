@@ -17,6 +17,8 @@ class Form
 public:
 	Form();
 	Form(std::string name, int signGrade, int executeGrade);
+	Form(Form const &src);
+	~Form() {};
 	const std::string getName() const;
 	bool getSignature() const;
 	int getSignGrade() const;

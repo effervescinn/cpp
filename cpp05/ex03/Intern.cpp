@@ -10,6 +10,11 @@ Intern::Intern()
 	this->creation[2] = &Intern::createPresidental;
 }
 
+Intern::Intern(Intern const &src)
+{
+	*this = src;
+}
+
 Form *Intern::createShrubbery(std::string target)
 {
 	Form *Shrubbery = new ShrubberyCreationForm(target);
@@ -42,4 +47,14 @@ Form *Intern::makeForm(std::string name, std::string target)
 		return NULL;
 	}
 	return (this->*creation[i])(target);
+}
+
+Intern &Intern::operator=(const Intern &rhs)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		this->forms[i] = rhs.forms[i];
+		this->creation[i] = rhs.creation[i];
+	}
+	return *this;
 }

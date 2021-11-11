@@ -2,7 +2,6 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "Form.hpp"
 #include "Intern.hpp"
 
 int main()
@@ -13,5 +12,7 @@ int main()
 	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
 	if (rrf)
 		std::cout << *rrf << std::endl;
+
+	delete rrf;
 	return 0;
 }

@@ -6,6 +6,7 @@ int main()
 	{
 		Bureaucrat test("Kolya", 1);
 		test.decrementGrade();
+		// test.incrementGrade();
 		std::cout << test << std::endl;
 	}
 	catch (const std::exception &e)
