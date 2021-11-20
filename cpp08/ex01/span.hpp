@@ -11,11 +11,14 @@ public:
 	Span(int N);
 	~Span();
 	void addNumber(int num);
+	void addNumber(std::vector<int>::iterator start, std::vector<int>::iterator end);
 	int shortestSpan();
 	int longestSpan();
 
+	void getNumbers();
+
 private:
-	int n;
+	unsigned int n;
 	std::vector<int> arr;
 };
 
