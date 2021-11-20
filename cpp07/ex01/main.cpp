@@ -1,28 +1,35 @@
 #include "iter.hpp"
 
+class Awesome
+{
+public:
+	Awesome(void) : _n(42) { return; };
+	int get(void) const { return this->_n; };
+
+private:
+	int _n;
+};
+
+template <typename T>
+void print(T const &x)
+{
+	std::cout << x << std::endl;
+	return;
+};
+
+std::ostream &operator<<(std::ostream &o, Awesome const &rhs)
+{
+	o << rhs.get();
+	return o;
+};
+
 int main()
 {
-	int arr[] = { 1, 1, 2, 3, 5, 8 };
-	std::cout << "arr: ";
-	for (int i = 0; i < 6; i++)
-		std::cout << arr[i] << (i == 5 ? "\n" : ",");
-	std::cout << "calling iter...\n";
-	iter(arr, 6, &pow);
-	std::cout << "arr: ";
-	for (int i = 0; i < 6; i++)
-		std::cout << arr[i] << (i == 5 ? "\n" : ",");
+	int tab[] = {0, 1, 2, 3, 4};
+	Awesome tab2[5];
 
-	std::cout << std::endl;
+	iter(tab, 5, print);
+	iter(tab2, 5, print);
 
-	char arr2[] = { 'a', 'b', 'c', 'd', 'e', 'f' };
-
-	std::cout << "arr: ";
-	for (int i = 0; i < 6; i++)
-		std::cout << arr2[i] << (i == 5 ? "\n" : ",");
-	std::cout << "calling iter...\n";
-	iter(arr2, 6, &iterChar);
-	std::cout << "arr: ";
-	for (int i = 0; i < 6; i++)
-		std::cout << arr2[i] << (i == 5 ? "\n" : ",");
 	return 0;
 }

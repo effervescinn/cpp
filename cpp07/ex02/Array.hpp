@@ -8,17 +8,30 @@ template <typename T>
 class Array
 {
 public:
-	Array<T>() { this->arr = new T(); };
+	Array<T>()
+	{
+		this->arr = NULL;
+		this->n = 0;
+	};
 	Array<T>(unsigned int n)
 	{
 		this->n = n;
-		this->arr = new T(n);
+		if (n == 0)
+			this->arr = NULL;
+		this->arr = new T[n];
 	}
 	Array<T>(const Array<T> &src)
 	{
-		*this = src;
+		this->n = src.n;
+		this->arr = new T[n];
+		for (unsigned int i = 0; i < this->n; i++)
+			this->arr[i] = src.arr[i];
 	}
-	~Array<T>() { delete[] arr; }
+	~Array<T>()
+	{
+		if (this->arr)
+			delete[] this->arr;
+	}
 	int size() { return this->n; };
 	T &operator[](unsigned int n)
 	{
@@ -26,19 +39,24 @@ public:
 			throw std::exception();
 		return arr[n];
 	}
-	Array& operator=(const Array& rhs)
+	Array<T> &operator=(const Array<T> &rhs)
 	{
-		this->n = rhs.n;
+		if (this == &rhs)
+			return *this;
 		if (this->arr)
-			delete [] arr;
-		this->arr = new T(n);
-		for (int i = 0; i < n; i++)
+			delete[] arr;
+		this->n = rhs.n;
+		this->arr = new T[this->n];
+		for (unsigned int i = 0; i < this->n; i++)
+		{
+			std::cout << i << std::endl;
 			this->arr[i] = rhs.arr[i];
+		}
 		return *this;
 	}
 
 private:
-	unsigned n;
+	unsigned int n;
 	T *arr;
 };
 

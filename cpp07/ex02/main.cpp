@@ -3,7 +3,7 @@
 int main()
 {
 	Array<int> arr(6);
-	
+
 	try
 	{
 		for (int i = 0; i < arr.size(); i++)
@@ -21,7 +21,6 @@ int main()
 	// try
 	// {
 	// 	Array<int> array;
-	// 	// array[1] = 6;
 	// 	std::cout << "Everything is fine\n";
 	// }
 	// catch(const std::exception& e)
